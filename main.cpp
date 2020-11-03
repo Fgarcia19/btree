@@ -12,7 +12,7 @@ using namespace std;
 int main( )
 {
 
-    string d[5]={"spanish.txt","french.txt","german.txt","italian.txt","portuguese.txt"};
-    diccionario a("prueba",d);
+    string d[6]={"latin.txt","spanish.txt","french.txt","german.txt","italian.txt","portuguese.txt"};
+    diccionario a("diccionario",d);
     a.find("ab");
 }
