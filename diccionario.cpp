@@ -7,16 +7,23 @@
 
 struct diccionario{
     B_TREE* dicc;
-    // string name;
     string names[total_diccionarios];
     diccionario(string name,string a[]){
+      if (!std::ifstream("B-"+name))
+      {
         dicc= new B_TREE (name);
         for(int i=0;i<total_diccionarios;i++)
         {
           names[i]=a[i];
           create(names[i],i);
         }
-
+      }
+      else
+      {
+        dicc= new B_TREE (name);
+        for(int i=0;i<total_diccionarios;i++)
+          names[i]=a[i];
+      }
     }
 
     string extract_key(string line)

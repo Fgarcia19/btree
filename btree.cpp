@@ -14,6 +14,7 @@ public:
     struct node;
     static node* read(unsigned long dir)
     {
+      accesos+=1;
       auto r = new node{};
       std::ifstream f;
       f.open(index_name, std::ios::binary);
@@ -238,6 +239,7 @@ public:
 
       node* find(T value)
       {
+        accesos=0;
         index_name="B-"+file_name;
         auto root=read(0);
         return find_helper(root,value);
